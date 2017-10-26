@@ -1,0 +1,40 @@
+Vivado Simulator 2017.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.2/bin/unwrapped/win64.o/xelab.exe -wto 0813dd5bafc94a5f8a882ac7446ea610 --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot testbench_exp7_behav xil_defaultlib.testbench_exp7 -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling package unisim.vcomponents
+Compiling package ieee.std_logic_signed
+Compiling package ieee.vital_timing
+Compiling package ieee.vital_primitives
+Compiling package unisim.vpkg
+Compiling package ieee.std_logic_textio
+Compiling package ieee.numeric_std
+Compiling architecture behavioral of entity xil_defaultlib.clk_div2_buf [clk_div2_buf_default]
+Compiling architecture rb18_internal_vhdl_v of entity unisim.RB18_INTERNAL_VHDL [\RB18_INTERNAL_VHDL(bram_size=18...]
+Compiling architecture ramb18e1_v of entity unisim.RAMB18E1 [\RAMB18E1(initp_00="000000000000...]
+Compiling architecture ramb16_s18_v of entity unisim.RAMB16_S18 [\RAMB16_S18(initp_00="0000000000...]
+Compiling architecture low_level_definition of entity xil_defaultlib.prog_rom [prog_rom_default]
+Compiling architecture behavioral of entity xil_defaultlib.ALU [alu_default]
+Compiling architecture behavioral of entity xil_defaultlib.CONTROL_UNIT [control_unit_default]
+Compiling architecture behavioral of entity xil_defaultlib.RegisterFile [registerfile_default]
+Compiling architecture behavioral of entity xil_defaultlib.Mux_3x2 [mux_3x2_default]
+Compiling architecture behavioral of entity xil_defaultlib.cntr_10bit [cntr_10bit_default]
+Compiling architecture behavioral of entity xil_defaultlib.ProgramCounter [programcounter_default]
+Compiling architecture behavioral of entity xil_defaultlib.Mux_2x1 [mux_2x1_default]
+Compiling architecture behavioral of entity xil_defaultlib.FlagReg [flagreg_default]
+Compiling architecture behavioral of entity xil_defaultlib.Flags [flags_default]
+Compiling architecture behavioral of entity xil_defaultlib.Mux_4x1_8bit [mux_4x1_8bit_default]
+Compiling architecture behavioral of entity xil_defaultlib.RAT_MCU [rat_mcu_default]
+Compiling architecture behavioral of entity xil_defaultlib.RAT_wrapper [rat_wrapper_default]
+Compiling architecture behavioral of entity xil_defaultlib.testbench_exp7
+Built simulation snapshot testbench_exp7_behav

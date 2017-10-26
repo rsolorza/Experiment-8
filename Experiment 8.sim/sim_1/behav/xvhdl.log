@@ -1,0 +1,30 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/Experiment-7-master/Experiment 7.srcs/sources_1/new/ALU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ALU
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/Experiment-7-master/Experiment 7.srcs/sources_1/new/Control_Unit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity CONTROL_UNIT
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/Experiment-7-master/Experiment 7.srcs/sources_1/new/Flags.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Flags
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/Experiment-7-master/Experiment 7.srcs/sources_1/new/Flip_Flop.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity FlagReg
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/Experiment-7-master/Experiment 7.srcs/sources_1/new/Mux_2x1.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Mux_2x1
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/Experiment-7-master/Experiment 7.srcs/sources_1/new/Mux_4x1_8bit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Mux_4x1_8bit
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/Experiment-7-master/Experiment 7.srcs/sources_1/new/PC.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity ProgramCounter
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/Experiment-7-master/Experiment 7.srcs/sources_1/new/Rat_MCU.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity RAT_MCU
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/Experiment-7-master/Experiment 7.srcs/sources_1/new/Rat_Wrapper.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity RAT_wrapper
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/Experiment-7-master/Experiment 7.srcs/sources_1/new/Reg_File.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity RegisterFile
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/Experiment-7-master/Experiment 7.srcs/sources_1/new/clock_divider.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity clk_div2_buf
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/Experiment-7-master/Experiment 7.srcs/sources_1/new/cntr_10bit.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity cntr_10bit
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/Experiment-7-master/Experiment 7.srcs/sources_1/new/mux_3x2.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity Mux_3x2
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/Experiment-7-master/Experiment 7.srcs/sources_1/new/prog_rom.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity prog_rom
+INFO: [VRFC 10-163] Analyzing VHDL file "E:/Experiment-7-master/Experiment 7.srcs/sim_1/new/testbench_exp7.vhd" into library xil_defaultlib
+INFO: [VRFC 10-307] analyzing entity testbench_exp7
