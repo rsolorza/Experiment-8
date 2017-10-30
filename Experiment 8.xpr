@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Product Version: Vivado v2017.2 (64-bit)              -->
+<!-- Product Version: Vivado v2016.2 (64-bit)              -->
 <!--                                                         -->
-<!-- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.   -->
+<!-- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="20" Path="C:/Users/rsolorza/Desktop/Experiment 8/Experiment 8.xpr">
+<Project Version="7" Minor="14" Path="C:/Users/tefarris/Desktop/Experiment 8/Experiment 8.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="15df7709182542da883c945c2ac67ab6"/>
+    <Option Name="Id" Val="cb6152ed7d324ff8a000dccb7019f9fe"/>
     <Option Name="Part" Val="xc7a35tcpg236-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -19,15 +19,11 @@
     <Option Name="BoardPart" Val=""/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
-    <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
-    <Option Name="IPCachePermission" Val="read"/>
-    <Option Name="IPCachePermission" Val="write"/>
     <Option Name="EnableCoreContainer" Val="FALSE"/>
     <Option Name="CreateRefXciForCoreContainers" Val="FALSE"/>
-    <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
-    <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
+    <Option Name="IPUserFilesDir" Val="$PPRDIR/Experiment 8.ip_user_files"/>
+    <Option Name="IPStaticSourceDir" Val="$PPRDIR/Experiment 8.ip_user_files/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="DSANumComputeUnits" Val="16"/>
     <Option Name="WTXSimLaunchSim" Val="35"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
@@ -43,95 +39,13 @@
     <Option Name="WTRivieraExportSim" Val="0"/>
     <Option Name="WTActivehdlExportSim" Val="0"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
-    <Option Name="XSimRadix" Val="hex"/>
-    <Option Name="XSimTimeUnit" Val="ns"/>
-    <Option Name="XSimArrayDisplayLimit" Val="1024"/>
-    <Option Name="XSimTraceLimit" Val="65536"/>
   </Configuration>
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/new/ALU.vhd">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Experiment-7-master/Experiment 7.srcs/sources_1/new/ALU.vhd"/>
-          <Attr Name="ImportTime" Val="1508957034"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/Control_Unit.vhd">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Experiment-7-master/Experiment 7.srcs/sources_1/new/Control_Unit.vhd"/>
-          <Attr Name="ImportTime" Val="1508957034"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/Flags.vhd">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Experiment-7-master/Experiment 7.srcs/sources_1/new/Flags.vhd"/>
-          <Attr Name="ImportTime" Val="1508957034"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/new/Flip_Flop.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Experiment-7-master/Experiment 7.srcs/sources_1/new/Flip_Flop.vhd"/>
-          <Attr Name="ImportTime" Val="1508957034"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/Mux_2x1.vhd">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Experiment-7-master/Experiment 7.srcs/sources_1/new/Mux_2x1.vhd"/>
-          <Attr Name="ImportTime" Val="1508957034"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/Mux_4x1_8bit.vhd">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Experiment-7-master/Experiment 7.srcs/sources_1/new/Mux_4x1_8bit.vhd"/>
-          <Attr Name="ImportTime" Val="1508957034"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/PC.vhd">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Experiment-7-master/Experiment 7.srcs/sources_1/new/PC.vhd"/>
-          <Attr Name="ImportTime" Val="1508957034"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/Rat_MCU.vhd">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Experiment-7-master/Experiment 7.srcs/sources_1/new/Rat_MCU.vhd"/>
-          <Attr Name="ImportTime" Val="1508957034"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/Reg_File.vhd">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Experiment-7-master/Experiment 7.srcs/sources_1/new/Reg_File.vhd"/>
-          <Attr Name="ImportTime" Val="1508957034"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/Sratch_Ram.vhd">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/clock_divider.vhd">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Experiment-7-master/Experiment 7.srcs/sources_1/new/clock_divider.vhd"/>
+          <Attr Name="ImportPath" Val="D:/Experiment-7-master/Experiment 7.srcs/sources_1/new/Flip_Flop.vhd"/>
           <Attr Name="ImportTime" Val="1508957034"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -139,7 +53,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/cntr_10bit.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Experiment-7-master/Experiment 7.srcs/sources_1/new/cntr_10bit.vhd"/>
+          <Attr Name="ImportPath" Val="D:/Experiment-7-master/Experiment 7.srcs/sources_1/new/cntr_10bit.vhd"/>
           <Attr Name="ImportTime" Val="1508957034"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -147,7 +61,7 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/mux_3x2.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Experiment-7-master/Experiment 7.srcs/sources_1/new/mux_3x2.vhd"/>
+          <Attr Name="ImportPath" Val="D:/Experiment-7-master/Experiment 7.srcs/sources_1/new/mux_3x2.vhd"/>
           <Attr Name="ImportTime" Val="1508957034"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -155,7 +69,103 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/prog_rom.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Experiment-7-master/Experiment 7.srcs/sources_1/new/prog_rom.vhd"/>
+          <Attr Name="ImportPath" Val="D:/Experiment-7-master/Experiment 7.srcs/sources_1/new/prog_rom.vhd"/>
+          <Attr Name="ImportTime" Val="1508957034"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/ALU.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="D:/Experiment-7-master/Experiment 7.srcs/sources_1/new/ALU.vhd"/>
+          <Attr Name="ImportTime" Val="1508957034"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/Control_Unit.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="D:/Experiment-7-master/Experiment 7.srcs/sources_1/new/Control_Unit.vhd"/>
+          <Attr Name="ImportTime" Val="1508957034"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/Flags.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="D:/Experiment-7-master/Experiment 7.srcs/sources_1/new/Flags.vhd"/>
+          <Attr Name="ImportTime" Val="1508957034"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/Mux_2x1.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="D:/Experiment-7-master/Experiment 7.srcs/sources_1/new/Mux_2x1.vhd"/>
+          <Attr Name="ImportTime" Val="1508957034"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/Mux_4x1_8bit.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="D:/Experiment-7-master/Experiment 7.srcs/sources_1/new/Mux_4x1_8bit.vhd"/>
+          <Attr Name="ImportTime" Val="1508957034"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/PC.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="D:/Experiment-7-master/Experiment 7.srcs/sources_1/new/PC.vhd"/>
+          <Attr Name="ImportTime" Val="1508957034"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/Reg_File.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="D:/Experiment-7-master/Experiment 7.srcs/sources_1/new/Reg_File.vhd"/>
+          <Attr Name="ImportTime" Val="1508957034"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/Sratch_Ram.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="D:/Experiment-8/Experiment 8.srcs/sources_1/new/Sratch_Ram.vhd"/>
+          <Attr Name="ImportTime" Val="1508959192"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/mux_2x1_10bit.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="D:/Experiment-8/Experiment 8.srcs/sources_1/new/mux_2x1_10bit.vhd"/>
+          <Attr Name="ImportTime" Val="1508991458"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/stack_pointer.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="D:/Experiment-8/Experiment 8.srcs/sources_1/new/stack_pointer.vhd"/>
+          <Attr Name="ImportTime" Val="1508961292"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/Rat_MCU.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="D:/Experiment-7-master/Experiment 7.srcs/sources_1/new/Rat_MCU.vhd"/>
+          <Attr Name="ImportTime" Val="1508957034"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/clock_divider.vhd">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="D:/Experiment-7-master/Experiment 7.srcs/sources_1/new/clock_divider.vhd"/>
           <Attr Name="ImportTime" Val="1508957034"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -163,15 +173,8 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/Rat_Wrapper.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Experiment-7-master/Experiment 7.srcs/sources_1/new/Rat_Wrapper.vhd"/>
+          <Attr Name="ImportPath" Val="D:/Experiment-7-master/Experiment 7.srcs/sources_1/new/Rat_Wrapper.vhd"/>
           <Attr Name="ImportTime" Val="1508957034"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/stack_pointer.vhd">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -186,7 +189,7 @@
       <Filter Type="Constrs"/>
       <File Path="$PSRCDIR/constrs_1/new/Constraints.xdc">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Experiment-7-master/Experiment 7.srcs/constrs_1/new/Constraints.xdc"/>
+          <Attr Name="ImportPath" Val="D:/Experiment-7-master/Experiment 7.srcs/constrs_1/new/Constraints.xdc"/>
           <Attr Name="ImportTime" Val="1508957033"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -200,7 +203,7 @@
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sim_1/new/testbench_exp7.vhd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../Experiment-7-master/Experiment 7.srcs/sim_1/new/testbench_exp7.vhd"/>
+          <Attr Name="ImportPath" Val="D:/Experiment-7-master/Experiment 7.srcs/sim_1/new/testbench_exp7.vhd"/>
           <Attr Name="ImportTime" Val="1508957034"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -227,6 +230,12 @@
     <Simulator Name="Questa">
       <Option Name="Description" Val="Questa Advanced Simulator"/>
     </Simulator>
+    <Simulator Name="IES">
+      <Option Name="Description" Val="Incisive Enterprise Simulator (IES)"/>
+    </Simulator>
+    <Simulator Name="VCS">
+      <Option Name="Description" Val="Verilog Compiler Simulator (VCS)"/>
+    </Simulator>
     <Simulator Name="Riviera">
       <Option Name="Description" Val="Riviera-PRO Simulator"/>
     </Simulator>
@@ -237,16 +246,18 @@
   <Runs Version="1" Minor="10">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a35tcpg236-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2017"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2017"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>
@@ -258,8 +269,6 @@
         <Step Id="write_bitstream"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <ReportStrategy/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
   </Runs>
 </Project>

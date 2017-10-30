@@ -16,7 +16,7 @@
 -- Revision: 4.00 (08-24-2016): removed support for multibus
 -- Revision: 4.01 (11-01-2016): removed PC_TRI reference
 -- Revision: 4.02 (11-15-2016): added SCR_DATA_SEL 
--- Additional Comments: Need to add SCR mux, and add stack pointer
+-- Additional Comments: add stack pointer
 --
 ----------------------------------------------------------------------------------
 library IEEE;
@@ -146,12 +146,29 @@ architecture Behavioral of RAT_MCU is
     end component;
     
     component Scratch_Ram
-        Port ( DATA_IN  : in  STD_LOGIC_VECTOR (3 downto 0);
-               DATA_OUT : out STD_LOGIC_VECTOR (3 downto 0); 
-               ADDR     : in  STD_LOGIC_VECTOR (4 downto 0);
+        Port ( DATA_IN  : in  STD_LOGIC_VECTOR (9 downto 0);
+               DATA_OUT : out STD_LOGIC_VECTOR (9 downto 0); 
+               ADDR     : in  STD_LOGIC_VECTOR (7 downto 0);
                WE       : in  STD_LOGIC; 
                CLK      : in  STD_LOGIC);
         end component;
+        
+    component mux_2x1_10bit 
+            Port ( A : in STD_LOGIC_VECTOR (9 downto 0);
+                   B : in STD_LOGIC_VECTOR (9 downto 0);
+                   SEL : in STD_LOGIC;
+                   OUTPUT : out STD_LOGIC_VECTOR (9 downto 0));
+        end component;
+
+    component stack_pointer 
+        port (   RST : in std_logic;
+                 CLK : in std_logic;
+                  LD : in std_logic;
+                INCR : in std_logic;
+                DECR : in std_logic; 
+                 DIN : in std_logic_vector (7 downto 0); 
+            DATA_OUT : out std_logic_vector (7 downto 0));
+    end component;
         
    -- intermediate signals ----------------------------------  
    signal s_inst_reg : std_logic_vector(17 downto 0) := (others => '0'); 
@@ -202,6 +219,7 @@ architecture Behavioral of RAT_MCU is
     signal scr_addr_sel : std_logic_vector(1 downto 0) := (others => '0');
     signal scr_mux_out : std_logic_vector (9 downto 0) := (others => '0');
     signal scr_addr_mux_out : std_logic_vector (7 downto 0) := (others => '0');
+    signal scr_dx_out : std_logic_vector (9 downto 0) := (others => '0');
     
     -- signals into Flags ------------------------------------------
     signal flg_c_set : std_logic := '0';
@@ -341,5 +359,22 @@ begin
                      SEL => scr_addr_sel,
                   OUTPUT => scr_addr_mux_out);
     
+    scr_dx_out <= "00" & dx_out;
+    scr_data_mux: mux_2x1_10bit 
+        Port map ( A => scr_dx_out,
+                   B => s_pc_count,
+                 SEL => scr_data_sel,
+              OUTPUT => scr_mux_out);
+              
+    SP: stack_pointer
+            port map (   RST => RESET,
+                         CLK => CLK,
+                          LD => sp_ld,
+                        INCR => sp_inc,
+                        DECR => sp_dec, 
+                         DIN => dx_out, 
+                    DATA_OUT => sp_data_out);
+              
+              
 
 end Behavioral;

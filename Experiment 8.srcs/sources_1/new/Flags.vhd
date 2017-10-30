@@ -58,7 +58,7 @@ begin
                    Q   => C_FLAG);
 
     my_ZFlag : FlagReg
-        port map ( D   => C,
+        port map ( D   => Z,
                    LD  => FLG_Z_LD,
                   SET  => '0',
                   CLR  => '0',

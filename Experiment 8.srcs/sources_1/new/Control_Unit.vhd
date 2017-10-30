@@ -146,14 +146,256 @@ begin
          NS <= ST_fet;
          PC_INC <= '0';  -- don't increment PC
 				
-	     case sig_OPCODE_7 is		
-
+	     case sig_OPCODE_7 is
+	     -- ADD reg-reg ------------
+	           when "0000100" => 
+	               RF_WR_SEL <= "00";
+	               RF_WR <= '1';
+	               ALU_SEL <= "0000";
+	               ALU_OPY_SEL <= '0';
+	               FLG_C_LD <= '1';
+	               FLG_Z_LD <= '1';
+	               
+          -- ADD reg-immed ---------
+                when "1010000" | "1010001" | "1010010" | "1010011" =>
+                   RF_WR_SEL <= "00";
+                   RF_WR <= '1';
+                   ALU_SEL <= "0000";
+                   ALU_OPY_SEL <= '1';
+                   FLG_C_LD <= '1';
+                   FLG_Z_LD <= '1';
+           
+           -- ADDC reg-reg ---------
+                when "0000101" => 
+                    RF_WR_SEL <= "00";
+                    RF_WR <= '1';
+                    ALU_SEL <= "0001";
+                    ALU_OPY_SEL <= '0';
+                    FLG_C_LD <= '1';
+                    FLG_Z_LD <= '1';
+           -- ADDC reg-immed ---------
+                when "1010100" | "1010101" | "1010110" | "1010111" => 
+                    RF_WR_SEL <= "00";
+                    RF_WR <= '1';
+                    ALU_SEL <= "0001";
+                    ALU_OPY_SEL <= '1';
+                    FLG_C_LD <= '1';
+                    FLG_Z_LD <= '1';         
+           -- AND reg-reg ----------
+                when "0000000" =>
+                    RF_WR_SEL <= "00";
+                    RF_WR <= '1';
+                    ALU_SEL <= "0101";
+                    ALU_OPY_SEL <= '0';
+                    FLG_C_CLR <= '1';
+                    FLG_Z_LD <= '1';
+           -- AND reg-immed ----------
+                when "1000000" | "1000001" | "1000010" | "1000011" =>
+                    RF_WR_SEL <= "00";
+                    RF_WR <= '1';
+                    ALU_SEL <= "0101";
+                    ALU_OPY_SEL <= '1';
+                    FLG_C_CLR <= '1';
+                    FLG_Z_LD <= '1';  
+           -- ASR reg --------------
+                when "0100100" =>
+                    RF_WR_SEL <= "00";
+                    RF_WR <= '1';
+                    ALU_SEL <= "1101";
+                    FLG_C_LD <= '1';
+                    FLG_Z_LD <= '1';
+          -- BRCC -----------------
+                when "0010101" =>
+                    PC_LD <= not C;
+                    PC_MUX_SEL <= "00";
+          -- BRCS -----------------
+                when "0010100" =>
+                    PC_LD <= C;
+                    PC_MUX_SEL <= "00";
+          -- BREQ -----------------
+                when "0010010" =>
+                    PC_LD <= Z;
+                    PC_MUX_SEL <= "00";
 		  -- BRN -------------------
               when "0010000" =>   
                     PC_LD <= '1';
                     PC_MUX_SEL <= "00";      
+          -- BRNE -----------------
+              when "0010011" =>
+                    PC_LD <= not Z;
+                    PC_MUX_SEL <= "00";
+          -- CALL -----------------
+              when "0010001" =>
+                    PC_LD <= '1';
+                    PC_MUX_SEL <= "00";
+                    SP_DECR <= '1';
+                    SCR_DATA_SEL <= '1';
+                    SCR_WR <= '1';
+                    SCR_ADDR_SEL <= "11";
+          -- CLC -------------------
+                when "0110000" =>
+                    FLG_C_CLR <= '1';
+         
+          -- CMP reg-reg -----------
+                when "0001000" => 
+                    ALU_OPY_SEL <= '0';
+                    ALU_SEL <= "0100";
+                    FLG_C_LD <= '1';
+                    FLG_Z_LD <= '1';
+          -- CMP reg-immed -----------
+                when "1100000" | "1100001" | "1100010" | "1100011" =>   
+                    ALU_OPY_SEL <= '1';
+                    ALU_SEL <= "0100";
+                    FLG_C_LD <= '1';
+                    FLG_Z_LD <= '1';
                     
-		  -- SUB reg-reg  --------
+          -- EXOR reg-reg ------------
+                when "0000010" => 
+                    RF_WR_SEL <= "00";
+                    RF_WR <= '1';
+                    ALU_SEL <= "0111";
+                    ALU_OPY_SEL <= '0';
+                    FLG_C_CLR <= '1';
+                    FLG_Z_LD <= '1';
+                    
+          -- EXOR reg-immed ------------
+                when "1001000" | "1001001" | "1001010" | "1001011" => 
+                    RF_WR_SEL <= "00";
+                    RF_WR <= '1';
+                    ALU_SEL <= "0111";
+                    ALU_OPY_SEL <= '1';
+                    FLG_C_CLR <= '1';
+                    FLG_Z_LD <= '1';
+        -- IN reg-immed  ------ 
+                when "1100100" | "1100101" | "1100110" | "1100111" =>                                     
+                    RF_WR <= '1';
+                    RF_WR_SEL <= "11";
+        
+        -- LD reg-reg ---------
+                when "0001010" =>
+                    RF_WR_SEL <= "01";
+                    RF_WR <= '1';
+                    SCR_ADDR_SEL <= "00";
+        
+        -- LD reg-immed ---------
+                when "1110000" | "1110001" | "1110010" | "1110011" =>
+                    RF_WR_SEL <= "01";
+                    RF_WR <= '1';
+                    SCR_ADDR_SEL <= "01";
+        
+        -- LSL reg --------------
+                when "0100000" =>
+                    RF_WR_SEL <= "00";
+                    RF_WR <= '1';
+                    ALU_SEL <= "1001";
+                    ALU_OPY_SEL <= '0';
+                    FLG_C_LD <= '1';
+                    FLG_Z_LD <= '1';
+                    
+        -- LSR  reg --------------
+                when "0100001" =>
+                    RF_WR_SEL <= "00";
+                    RF_WR <= '1';
+                    ALU_SEL <= "1010";
+                    ALU_OPY_SEL <= '0';
+                    FLG_C_LD <= '1';
+                    FLG_Z_LD <= '1';
+
+        -- MOV reg-reg  ------
+                when "0001001" =>                       
+                    RF_WR <= '1';
+                    RF_WR_SEL <= "00";
+                    ALU_SEL <= "1110";
+                    ALU_OPY_SEL <= '0';
+        
+        -- MOV reg-immed  ------
+                when "1101100" | "1101101" | "1101110" | "1101111" =>                       
+                    RF_WR <= '1';
+                    RF_WR_SEL <= "00";
+                    ALU_SEL <= "1110";
+                    ALU_OPY_SEL <= '1';
+        
+        -- OR reg-reg ---------
+                when "0000001" => 
+                    RF_WR <= '1';
+                    RF_WR_SEL <= "00";
+                    ALU_SEL <= "0110";
+                    ALU_OPY_SEL <= '0';
+                    FLG_C_CLR <= '1';
+                    FLG_Z_LD <= '1';
+                    
+        -- OR reg-immed ---------
+                when "1000100" | "1000101" | "1000110" | "1000111" => 
+                    RF_WR <= '1';
+                    RF_WR_SEL <= "00";
+                    ALU_SEL <= "0110";
+                    ALU_OPY_SEL <= '1';
+                    FLG_C_CLR <= '1';
+                    FLG_Z_LD <= '1';
+        -- OUT reg-immed  ------
+                when "1101000" | "1101001" | "1101010" | "1101011" =>                       
+                    IO_STRB <= '1';
+        
+        -- POP reg -------------
+                when "0100110" =>
+                    RF_WR_SEL <= "01";
+                    RF_WR <= '1';
+                    SCR_ADDR_SEL <= "10";
+                    SP_INCR <= '1';
+        -- PUSH reg -------------
+                when "0100101" =>
+                    SCR_DATA_SEL <= '0';
+                    SCR_WR <= '1';
+                    SCR_ADDR_SEL <= "11";
+                    SP_DECR <= '1';
+        
+        -- RET None -------------
+                when "0110010" =>
+                    SCR_ADDR_SEL <= "10";
+                    SP_INCR <= '1';
+                    PC_LD <= '1';
+                    PC_MUX_SEL <= "01";
+        
+        -- ROL reg --------------
+                when "0100010" => 
+                    RF_WR <= '1';
+                    RF_WR_SEL <= "00";
+                    ALU_OPY_SEL <= '0';
+                    ALU_SEL <= "1011";
+                    FLG_C_LD <= '1';
+                    FLG_Z_LD <= '1';
+                    
+        -- ROR reg --------------
+                when "0100011" => 
+                    RF_WR <= '1';
+                    RF_WR_SEL <= "00";
+                    ALU_OPY_SEL <= '0';
+                    ALU_SEL <= "1100";
+                    FLG_C_LD <= '1';
+                    FLG_Z_LD <= '1';
+                    
+        -- RSP reg ---------------
+                when "0101001" => 
+                    RF_WR <= '1';
+                    RF_WR_SEL <= "10";
+        
+        -- SEC None --------------
+                when "0110001" =>
+                    FLG_C_SET <= '1';
+                    
+        -- ST reg-reg ------------
+                when "0001011" => 
+                    SCR_DATA_SEL <= '0';
+                    SCR_WR <= '1';
+                    SCR_ADDR_SEL <= "00";
+        
+        -- ST reg-immed ------------
+                when "1110100" | "1110101" | "1110110" | "1110111" => 
+                    SCR_DATA_SEL <= '0';
+                    SCR_WR <= '1';
+                    SCR_ADDR_SEL <= "01";    
+                                                            
+		-- SUB reg-reg  ---------
               when "0000110" =>					
                     RF_WR <= '1';
                     RF_WR_SEL <= "00";
@@ -161,23 +403,52 @@ begin
                     ALU_SEL <= "0010";
                     FLG_C_LD <= '1';
                     FLG_Z_LD <= '1';
-                    
-		  -- IN reg-immed  ------
-              when "1100100" | "1100101" | "1100110" | "1100111" =>		                             
-                    RF_WR <= '1';
-                    RF_WR_SEL <= "11";
-
-		  -- OUT reg-immed  ------
-              when "1101000" | "1101001" | "1101010" | "1101011" =>		               
-                    IO_STRB <= '1';
-                   
-		  -- MOV reg-immed  ------
-              when "1101100" | "1101101" | "1101110" | "1101111" =>		               
+         
+         -- SUB reg-immed ---------
+                when "1011000" | "1011001" | "1011010" | "1011011" =>
                     RF_WR <= '1';
                     RF_WR_SEL <= "00";
-                    ALU_SEL <= "1110";
                     ALU_OPY_SEL <= '1';
-                  
+                    ALU_SEL <= "0010";
+                    FLG_C_LD <= '1';
+                    FLG_Z_LD <= '1';
+                    
+         -- SUBC reg-reg ---------
+                when "0000111" =>
+                    RF_WR <= '1';
+                    RF_WR_SEL <= "00";
+                    ALU_OPY_SEL <= '0';
+                    ALU_SEL <= "0011";
+                    FLG_C_LD <= '1';
+                    FLG_Z_LD <= '1';
+                      
+         -- SUBC reg-immed ---------
+                when "1011100" | "1011101" | "1011110" | "1011111" =>
+                    RF_WR <= '1';
+                    RF_WR_SEL <= "00";
+                    ALU_OPY_SEL <= '1';
+                    ALU_SEL <= "0011";
+                    FLG_C_LD <= '1';
+                    FLG_Z_LD <= '1';   
+        
+         -- TEST reg-reg ------------
+                when "0000011" =>
+                    ALU_SEL <= "1000";
+                    ALU_OPY_SEL <= '0';
+                    FLG_C_CLR <= '1';
+                    FLG_Z_LD <= '1';
+
+         -- TEST reg-immed ------------
+                when "1001100" | "1001101" | "1001110" | "1001111" =>
+                    ALU_SEL <= "1000";
+                    ALU_OPY_SEL <= '1';
+                    FLG_C_CLR <= '1';
+                    FLG_Z_LD <= '1';
+
+          -- WSP reg ------------------
+                when "0101000" => 
+                    SP_LD <= '1';
+                    
               when others =>  -- for inner case
                   NS <= ST_fet;       
 
